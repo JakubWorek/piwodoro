@@ -36,7 +36,7 @@ function Settings() {
                 Simple pomodoro timer. <br></br>
                 When there's a break you have to drink a beer. <br></br>
                 Cheers 🍺 <br></br>
-                Image: <a href="url">vecteezy.com</a>
+                Image: <a href="vecteezy.com">vecteezy.com</a>
             </div>
         </div>
     )
