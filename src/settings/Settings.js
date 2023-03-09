@@ -1,7 +1,7 @@
 import './Settings.css'
 import ReactSlider from 'react-slider';
 import SettingsContext from './SettingsContext';
-import BackButton from './BackButton';
+import BackButton from '../buttons/BackButton';
 import { useContext } from 'react';
 
 

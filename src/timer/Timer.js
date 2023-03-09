@@ -3,10 +3,10 @@ import 'react-circular-progressbar/dist/styles.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Timer.css'
-import PauseButton from './PauseButton.js';
-import PlayButton from './PlayButton.js';
-import SettingsButton from './SettingsButton';
-import SettingsContext from './SettingsContext';
+import PauseButton from '../buttons/PauseButton.js';
+import PlayButton from '../buttons/PlayButton.js';
+import SettingsButton from '../buttons/SettingsButton';
+import SettingsContext from '../settings/SettingsContext';
 import { useContext, useState, useEffect, useRef} from 'react';
 
 

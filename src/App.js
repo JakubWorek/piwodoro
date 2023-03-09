@@ -1,7 +1,7 @@
 import './App.css';
-import Timer from './Timer.js';
-import Settings from './Settings';
-import SettingsContext from './SettingsContext';
+import Timer from './timer/Timer';
+import Settings from './settings/Settings';
+import SettingsContext from './settings/SettingsContext';
 import React from 'react';
 import { useState } from 'react';
 
