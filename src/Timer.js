@@ -83,7 +83,7 @@ function Timer() {
             <div>
                 <ToastContainer 
                 position="top-center"
-                autoClose={SettingsInfo.breakMinutes*60*1000}
+                autoClose={30*1000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
