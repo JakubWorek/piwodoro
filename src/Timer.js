@@ -6,8 +6,8 @@ import './Timer.css'
 import PauseButton from './PauseButton.js';
 import PlayButton from './PlayButton.js';
 import SettingsButton from './SettingsButton';
-import { useContext, useState, useEffect, useRef} from 'react';
 import SettingsContext from './SettingsContext';
+import { useContext, useState, useEffect, useRef} from 'react';
 
 
 const piwny = '#FDE456';
@@ -20,11 +20,14 @@ function Timer() {
     const [secondsLeft, setSecondsLeft] = useState(0);
     const [mode, setMode] = useState('break');
 
+
     const secondsLeftRef = useRef(secondsLeft);
     const isPausedRef = useRef(isPaused);
     const modeRef = useRef(mode);
 
+
     const notify = () => toast.success("Time for beer!");
+
 
     function switchMode(){
         const nextMode = modeRef.current === 'work' ? 'break' : 'work';
@@ -38,14 +41,17 @@ function Timer() {
         
     }
 
+
     function tick(){
         secondsLeftRef.current--;
         setSecondsLeft(secondsLeftRef.current);
     }
 
+
     function initTimer() {
         setSecondsLeft(SettingsInfo.workMinutes * 60);
     }
+
 
     useEffect(() => {
         initTimer();
@@ -64,18 +70,20 @@ function Timer() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [SettingsInfo]);
 
+
     const totalSeconds = mode === 'work' ? SettingsInfo.workMinutes * 60 : SettingsInfo.breakMinutes * 60;
     const percentage = Math.round(secondsLeft/totalSeconds * 100) ;
     const minutes = Math.floor(secondsLeft/60);
     let seconds = Math.floor(secondsLeft % 60);
     if(seconds < 10) seconds = '0'+seconds;
 
+
     return (
         <div class="container">
             <div>
                 <ToastContainer 
                 position="top-center"
-                autoClose={5000}
+                autoClose={SettingsInfo.breakMinutes*60*1000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
@@ -84,16 +92,6 @@ function Timer() {
                 draggable
                 pauseOnHover
                 theme="light"
-                stules={toast({
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light", 
-                })}
                 />
             </div>
             <div class="nametag">🍺 Piwodoro 🍺</div>
@@ -114,7 +112,6 @@ function Timer() {
                     : <PauseButton onClick={ () => {setIsPaused(true); isPausedRef.current=true }} /> }
                 <SettingsButton onClick={() => SettingsInfo.setShowSettings(true)} />
             </div>
-
         </div>
     );
 }

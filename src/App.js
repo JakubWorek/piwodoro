@@ -1,15 +1,17 @@
 import './App.css';
 import Timer from './Timer.js';
-import { useState } from 'react';
 import Settings from './Settings';
 import SettingsContext from './SettingsContext';
 import React from 'react';
+import { useState } from 'react';
+
 
 function App() {
 	const [showSettings, setShowSettings] = useState(false);
 	const [workMinutes, setWorkMinutes] = useState(45);
 	const [breakMinutes, setBreakMinutes] = useState(15);
 
+	
 	return (
     	<main>
 			<SettingsContext.Provider value={{

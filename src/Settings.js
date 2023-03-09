@@ -1,11 +1,13 @@
 import './Settings.css'
 import ReactSlider from 'react-slider';
 import SettingsContext from './SettingsContext';
-import { useContext } from 'react';
 import BackButton from './BackButton';
+import { useContext } from 'react';
+
 
 function Settings() {
     const SettingsInfo = useContext(SettingsContext);
+
 
     return(
         <div class="settings-container">
