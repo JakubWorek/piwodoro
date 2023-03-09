@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/piwodoro/static/css/main.fb2fb4a4.css",
-    "main.js": "/piwodoro/static/js/main.cebff21b.js",
+    "main.css": "/piwodoro/static/css/main.ccb770ef.css",
+    "main.js": "/piwodoro/static/js/main.37820a4f.js",
     "static/js/787.5dc4cd5c.chunk.js": "/piwodoro/static/js/787.5dc4cd5c.chunk.js",
     "static/media/vecteezy_beer-day-background-two-hands-holding-glass-and-toast_8831618.jpg": "/piwodoro/static/media/vecteezy_beer-day-background-two-hands-holding-glass-and-toast_8831618.79597253db4c918d5be1.jpg",
     "index.html": "/piwodoro/index.html",
-    "main.fb2fb4a4.css.map": "/piwodoro/static/css/main.fb2fb4a4.css.map",
-    "main.cebff21b.js.map": "/piwodoro/static/js/main.cebff21b.js.map",
+    "main.ccb770ef.css.map": "/piwodoro/static/css/main.ccb770ef.css.map",
+    "main.37820a4f.js.map": "/piwodoro/static/js/main.37820a4f.js.map",
     "787.5dc4cd5c.chunk.js.map": "/piwodoro/static/js/787.5dc4cd5c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb2fb4a4.css",
-    "static/js/main.cebff21b.js"
+    "static/css/main.ccb770ef.css",
+    "static/js/main.37820a4f.js"
   ]
 }
