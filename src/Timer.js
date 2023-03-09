@@ -1,5 +1,7 @@
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Timer.css'
 import PauseButton from './PauseButton.js';
 import PlayButton from './PlayButton.js';
@@ -7,7 +9,10 @@ import SettingsButton from './SettingsButton';
 import { useContext, useState, useEffect, useRef} from 'react';
 import SettingsContext from './SettingsContext';
 
+
 const piwny = '#FDE456';
+const green = '#4aec8c';
+
 
 function Timer() {
     const SettingsInfo = useContext(SettingsContext);
@@ -19,12 +24,18 @@ function Timer() {
     const isPausedRef = useRef(isPaused);
     const modeRef = useRef(mode);
 
+    const notify = () => toast.success("Time for beer!");
+
     function switchMode(){
         const nextMode = modeRef.current === 'work' ? 'break' : 'work';
         setMode(nextMode);
+        if(nextMode === 'break'){
+            notify();
+        }
         modeRef.current = nextMode;
         setSecondsLeft(nextMode === 'work' ? SettingsInfo.workMinutes * 60 : SettingsInfo.breakMinutes * 60); 
         secondsLeftRef.current = nextMode === 'work' ? SettingsInfo.workMinutes * 60 : SettingsInfo.breakMinutes * 60;
+        
     }
 
     function tick(){
@@ -47,7 +58,7 @@ function Timer() {
                 return switchMode();
             }
             tick();
-        }, 1000);
+        }, 100);
 
         return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -61,6 +72,30 @@ function Timer() {
 
     return (
         <div class="container">
+            <div>
+                <ToastContainer 
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                stules={toast({
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light", 
+                })}
+                />
+            </div>
             <div class="nametag">🍺 Piwodoro 🍺</div>
             <div class="progressbar">
                 <CircularProgressbar
@@ -68,7 +103,7 @@ function Timer() {
                 text={minutes + ":" + seconds} 
                 styles={buildStyles({
                     textColor:piwny,
-                    pathColor:piwny,
+                    pathColor:mode === 'work' ? piwny : green,
                     trailColor:'rgba(255, 255, 255,.2)',
                 })}
                 />
