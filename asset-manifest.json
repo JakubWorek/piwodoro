@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/piwodoro/static/css/main.f1de5857.css",
-    "main.js": "/piwodoro/static/js/main.97086a92.js",
+    "main.js": "/piwodoro/static/js/main.81eef6ba.js",
     "static/js/787.5dc4cd5c.chunk.js": "/piwodoro/static/js/787.5dc4cd5c.chunk.js",
     "static/media/vecteezy_beer-day-background-two-hands-holding-glass-and-toast_8831618.jpg": "/piwodoro/static/media/vecteezy_beer-day-background-two-hands-holding-glass-and-toast_8831618.79597253db4c918d5be1.jpg",
     "index.html": "/piwodoro/index.html",
     "main.f1de5857.css.map": "/piwodoro/static/css/main.f1de5857.css.map",
-    "main.97086a92.js.map": "/piwodoro/static/js/main.97086a92.js.map",
+    "main.81eef6ba.js.map": "/piwodoro/static/js/main.81eef6ba.js.map",
     "787.5dc4cd5c.chunk.js.map": "/piwodoro/static/js/787.5dc4cd5c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f1de5857.css",
-    "static/js/main.97086a92.js"
+    "static/js/main.81eef6ba.js"
   ]
 }
